@@ -1,0 +1,23 @@
+﻿@model MVCexample.ViewModel.CustomerMovieViewModel
+
+
+@{
+    ViewBag.Title = "Display";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron"style="border:5px dashed deeppink">
+    <h2 class="align-content-lg-center" style="background-color:aqua">Movie Details</h2>
+
+    <p class="text-capitalize">Movie id : @Model.Movies.ID<br /> Movie name : @Model.Movies.MovieName</p>
+    <br />
+    <h2 class="text-capitalize" style="background-color:aqua">Customer Details</h2>
+    <ol>
+    @foreach (var item in Model.Customers)
+    {
+        <li class="text-capitalize">Customer name : @item.CustomerName</li>
+    }
+    </ol>
+    
+</div>
+

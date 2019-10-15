@@ -1,0 +1,44 @@
+﻿@model  MVCexample.Models.Movie
+
+@{
+    ViewBag.Title = "DeleteMovie";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DeleteMovie</h2>
+
+<div class="container">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            @Html.LabelFor(m => m.Movie_Name)
+            @Html.TextBoxFor(m => m.Movie_Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Movie_Name)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Release_Date)
+            @Html.TextBoxFor(m => m.Release_Date, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Release_Date)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Date_Added)
+            @Html.TextBoxFor(m => m.Date_Added, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Date_Added)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Available_Stock)
+            @Html.TextBoxFor(m => m.Available_Stock, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Available_Stock)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.GenreID)
+            @Html.DropDownListFor(m => m.GenreID, ViewBag.GenreID as SelectList, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.GenreID)
+        </div>
+        <div>
+            <input type="submit" name="cmdSubmit" value="Delete" />
+        </div>
+
+    }
+</div>
