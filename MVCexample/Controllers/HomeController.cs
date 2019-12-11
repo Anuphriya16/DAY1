@@ -10,6 +10,9 @@ namespace MVCexample.Controllers
     {
         public ActionResult Index()
         {
+            //string Country = TempData["CountryName"].ToString();
+
+            //return Content("NAME:" + Country);
             return View();
         }
 

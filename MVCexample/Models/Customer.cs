@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using MVCexample.CustomAttribute;
 
 namespace MVCexample.Models
 {
@@ -15,9 +16,12 @@ namespace MVCexample.Models
         [StringLength(50)]
         public string CustomerName { get; set; }
 
+   
         [Required]
+        [ValidBirthDate]
         [Display(Name = "Birth of Date")]
-        public DateTime? BirthDate { get; set; }
+       
+        public DateTime BirthDate { get; set; }
 
         [Required]
         [StringLength(10)]
@@ -36,6 +40,8 @@ namespace MVCexample.Models
         // Reference Column
         [Required]
         public int? MembershipTypeID { get; set; }
+
+      
 
     }
     

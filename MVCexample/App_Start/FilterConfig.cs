@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using MVCexample.Custom_Filter;
+using System.Web;
 using System.Web.Mvc;
 
 namespace MVCexample
@@ -8,6 +9,7 @@ namespace MVCexample
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            filters.Add(new ExceptionLoggerAttribute());
         }
     }
 }
